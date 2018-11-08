@@ -15,3 +15,9 @@ export const getHelloByThunk = () => async dispatch => {
     });
 
 }
+
+export const getHelloBySaga = () => (
+    {
+        type: 'GET_HELLO_BY_SAGA',
+    }
+);
