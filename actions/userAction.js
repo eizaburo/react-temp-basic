@@ -4,3 +4,14 @@ export const updateName = name => (
         name: name
     }
 );
+
+export const getHelloByThunk = () => async dispatch => {
+    const response = await fetch('http://www.bluecode.jp/test/api.php');
+    const json = await response.json();
+
+    dispatch({
+        type: 'GET_HELLO_BY_THUNK',
+        name: json.message
+    });
+
+}

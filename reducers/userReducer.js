@@ -13,6 +13,12 @@ const userReducer = (state = initialState, action) => {
                     name: action.name
                 }
             });
+        case 'GET_HELLO_BY_THUNK':
+            return Object.assign({}, state, {
+                user: {
+                    name: action.name + ' by thunk'
+                }
+            });
         default:
             return state;
     }
