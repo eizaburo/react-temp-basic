@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Text, Button } from 'react-native';
+import { connect } from 'react-redux';
 
 class Home extends React.Component {
     render() {
@@ -10,9 +11,18 @@ class Home extends React.Component {
                     title='Link to Detail'
                     onPress={() => this.props.navigation.navigate('Detail')}
                 />
+                <Text>{this.props.state.userData.user.name}</Text>
             </View>
         );
     }
 }
 
-export default Home;
+const mapStateToProps = state => (
+    {
+        state: state,
+    }
+);
+
+export default connect(mapStateToProps, null)(Home);
+
+// export default Home;
